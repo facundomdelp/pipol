@@ -389,7 +389,7 @@ header ul li a:hover::after, header ul li a:focus::after {
     background-position: bottom;
     background-position-x: left;
     background-size: 50%;
-    
+
     height: 1000px;
 }
 

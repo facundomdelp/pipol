@@ -11,6 +11,10 @@
 <body>
 
     <main>
+
+        <div class="scrollbar" id="style-4">
+            <div class="force-overflow"></div>
+        </div>
         
         <section class="caratula" id="caratula">
             <div class="marco">
@@ -30,10 +34,10 @@
             </div>
         </section>
 
-        <section class="secciones" id="nosotros">
+        <section class="secciones">
             
             <header data-aos="fade-zoom-in">
-                <img src="./img/pipol.png" alt="logo de la marca">
+                <a id="logo__header" href="#nosotros"><img src="./img/pipol.png" alt="logo de la marca"></a>
                 <ul>
                     <li><a href="#caratula">Inicio</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
@@ -42,7 +46,7 @@
                 </ul>
             </header>
 
-            <div class="nosotros__seccion">
+            <div class="nosotros__seccion" id="nosotros">
                 <article class="izquierda">
                     <img src="./img/nosotros_lupa.svg" alt="nosotros con lupa">
                 </article>
@@ -56,18 +60,35 @@
             <section class="servicios" id="servicios">
 
                 <div class="servicios__seccion">
-
+                    <article class="arriba" data-aos="zoom-in-right">
+                        <h2>Nuestros servicios</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex et dolorum beatae, optio sit cum maiores consequatur odit! Odio non at laborum recusandae. Quidem laboriosam adipisci autem minima laudantium ipsa.</p>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic quibusdam magnam, eveniet ad illo vero quasi debitis, deserunt, libero nobis fugiat cumque quidem inventore blanditiis unde eos itaque doloribus repudiandae.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, repellat? Voluptas tempora incidunt explicabo ipsa, distinctio veniam maiores saepe, exercitationem eius minus reprehenderit. Nostrum nisi voluptatem magnam dolor aliquam placeat.</p>
+                    </article>
+                    <article class="abajo">
+                        <img src="./img/servicios_gente.svg" alt="nosotros con lupa">
+                    </article>
                 </div>
 
             </section>
 
-            <section class="contactenos" id="contactenos">
+            <footer class="contactenos" id="contactenos">
 
                 <div class="contactenos__seccion">
-
+                    <div class="redesSociales">
+                        <span class="linea"></span>
+                        <a href=""><img src="./img/linkedin.svg" alt="linkedin"></a>
+                        <a href=""><img src="./img/instagram.svg" alt="instagram"></a>
+                        <a href=""><img src="./img/facebook.svg" alt="facebook"></a>
+                        <a href=""><img src="./img/mail.svg" alt="mail"></a>
+                        <span class="linea"></span>
+                    </div>
+                    <img id="logo" src="./img/pipol.png" alt="logo" data-aos="fade-up"
+                    data-aos-anchor-placement="bottom-bottom">
                 </div>
 
-            </section>
+            </footer>
         
         </section>
 

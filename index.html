@@ -19,43 +19,59 @@
         
         <section class="caratula" id="caratula">
             <div class="marco">
-                <article class="izquierda">
-                    <div data-aos="zoom-out">
-                        <img src="./img/pipol.png" alt="logo de la marca">
-                    </div>
-                    <div>
-                        <h1>La diferencia entre <span id="cursiva">buscar personas</span> y <span id="negrita">encontrar talentos.</span></h1>
-                        <p></p>
-                    </div>
-                </article>
-                <article class="derecha">
-                    <img src="./img/imagen_caratula.svg" alt="">
-                    <a href="#nosotros"><button>Conócenos</button></a>
-                </article>
+                <div class="logo__caratula" data-aos="zoom-out">
+                    <img src="./img/pipol.png" alt="logo de la marca">
+                </div>
+                <section>
+                    <article class="texto">
+                        <div>
+                            <h1>La diferencia entre <span id="cursiva">buscar personas</span> y <span id="negrita">encontrar talentos.</span></h1>
+                        </div>
+                    </article>
+                    <article class="conocenos">
+                        <img src="./img/imagen_caratula.svg" alt="">
+                        <a href="#nosotros"><button>Conócenos</button></a>
+                    </article> 
+                </section> 
             </div>
         </section>
 
         <section class="secciones">
             
-            <header data-aos="fade-zoom-in">
-                <a id="logo__header" href="#nosotros"><img src="./img/pipol.png" alt="logo de la marca"></a>
+            <header id="header__desktop" data-aos="fade-zoom-in">
+                <div id="logo__header">
+                    <a href="#nosotros"><img src="./img/pipol.png" alt="logo de la marca"></a>
+                </div>
                 <ul>
                     <li><a href="#caratula">Inicio</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#contactenos">Contáctenos</a></li>
+                </ul>            
+            </header>
+
+            <header id="header__mobile">
+                <div id="logo__header">
+                    <a href="#nosotros"><img src="./img/pipol.png" alt="logo de la marca"></a>
+                    <span style="cursor: pointer" id="boton__responsive" class="sinSeleccionar"><img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e" alt=""> </span>
+                </div>
+                <ul id="nodoNavegacion" class="anular__navegacion">
+                    <li class="botonNavegar"><a href="#caratula">Inicio</a></li>
+                    <li class="botonNavegar"><a href="#nosotros">Nosotros</a></li>
+                    <li class="botonNavegar"><a href="#servicios">Servicios</a></li>
+                    <li class="botonNavegar"><a href="#contactenos">Contáctenos</a></li>
                 </ul>
             </header>
 
-            <div class="nosotros__seccion" id="nosotros">
+            <section class="nosotros__seccion" id="nosotros">
                 <article class="izquierda">
                     <img src="./img/nosotros_lupa.svg" alt="nosotros con lupa">
                 </article>
                 <article class="derecha" data-aos="zoom-out">
                     <h2>¿Quienes somos?</h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem provident, accusantium corporis optio sint beatae id dolorem possimus consectetur sed ut illo? Aperiam distinctio iste officia eveniet eum ratione recusandae!</p>
+                    <p>Pipol es una consultora de reclutamiento boutique conformada por un equipo de profesionales interdisciplinarios que hace foco en brindar a sus partners soluciones concretas sobre adquisición de talentos.</p>
                 </article>
-            </div>
+            </section>
 
 
             <section class="servicios" id="servicios">
@@ -63,9 +79,11 @@
                 <div class="servicios__seccion">
                     <article class="arriba" data-aos="zoom-in-right">
                         <h2>Nuestros servicios</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex et dolorum beatae, optio sit cum maiores consequatur odit! Odio non at laborum recusandae. Quidem laboriosam adipisci autem minima laudantium ipsa.</p>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic quibusdam magnam, eveniet ad illo vero quasi debitis, deserunt, libero nobis fugiat cumque quidem inventore blanditiis unde eos itaque doloribus repudiandae.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, repellat? Voluptas tempora incidunt explicabo ipsa, distinctio veniam maiores saepe, exercitationem eius minus reprehenderit. Nostrum nisi voluptatem magnam dolor aliquam placeat.</p>
+                        <h3>Realizamos reclutamiento personalizado end-to-end</h3>
+                        <p>•	Identificación del perfil y responsabilidades a realizar en forma conjunta con el partner.</p>
+                        <p>•	Definimos la estrategia de búsqueda.</p>
+                        <p>•	Selección y presentación de candidatos finalistas.</p>
+                        <p>•	Cierre de búsqueda y seguimiento.</p>
                     </article>
                     <article class="abajo">
                         <img src="./img/servicios_gente.svg" alt="nosotros con lupa">
@@ -95,6 +113,7 @@
 
     </main>
 
+    <script src="./javascript/eventos.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script> AOS.init();</script>
 

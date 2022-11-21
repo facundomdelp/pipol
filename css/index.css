@@ -23,39 +23,21 @@
 
 /* ANIMACIONES */
 
-@keyframes gradient {
+@keyframes abrirNavegador {
+    
     0% {
-        background-position: 0% 0%;
+
+        height: 76.31px;
     }
-    50% {
-        background-position: 100% 100%;
-    }
+
+
+    
     100% {
-        background-position: 0% 0%;
+
+        height: 234.31px;
     }
 }
 
-@keyframes wave {
-    2% {
-        transform: translateX(1);
-    }
-
-    25% {
-        transform: translateX(-25%);
-    }
-
-    50% {
-        transform: translateX(-50%);
-    }
-
-    75% {
-        transform: translateX(-25%);
-    }
-
-    100% {
-        transform: translateX(1);
-    }
-}
 
 /* RESET CSS */
 
@@ -120,7 +102,7 @@ img{
 
 /* HEADER */
 
-header {
+#header__desktop {
 
     margin: 0 5px;
     z-index: 1;
@@ -137,32 +119,29 @@ header {
     align-items: center;
 }
 
-header #logo__header {
+#header__desktop #logo__header {
 
-    width: 13%;
+    width: 14em;
     height: auto;
-    padding: 7px;
+    padding: .75em;
 }
 
-header ul {
+#header__desktop ul {
 
     width: auto;
     display: flex;
+    flex: 1;
 }
 
-header ul li {
+#header__desktop ul li {
 
-    margin: 0 50px;
-    font-size: 2rem;
+    flex-basis: 20em;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
 }
 
-header ul li:last-child {
-
-    margin-right: 100px;
-}
-
-
-header ul li a {
+#header__desktop ul li a {
 
     overflow: hidden;
     display: block;
@@ -170,7 +149,7 @@ header ul li a {
     padding: 0.2em 0;
 }
   
-header ul li a::after {
+#header__desktop ul li a::after {
 
     content: '';
     position: absolute;
@@ -183,11 +162,16 @@ header ul li a::after {
     transform: translate3d(-100%, 0, 0);
 }
   
-header ul li a:hover::after, header ul li a:focus::after {
+#header__desktop ul li a:hover::after, #header__desktop ul li a:focus::after {
 
     opacity: 1;
     transform: translate3d(0, 0.2em, 0);
     transform: translate3d(0, 0, 0);
+}
+
+#header__mobile {
+
+    display: none;
 }
 
 /* MAIN */
@@ -219,73 +203,78 @@ header ul li a:hover::after, header ul li a:focus::after {
 
     width: 90vw;
     height: 90vh;
+    padding: var(--space-l);
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+.caratula .marco section {
+
+    display: flex;
+    gap: calc(2*var(--space-m));
+    height: 100%;
 }
 
 .caratula .marco article {
 
     width: 50%;
-    padding: var(--space-l);
 }
 
-.caratula .marco .izquierda {
+.caratula .marco .texto {
 
     width: 55%;
-    padding: var(--space-l);
     display: flex;
     flex-direction: column;
     gap: 8%;
 }
 
-.caratula .marco .izquierda img {
+.caratula .marco img {
     
     align-self: flex-start;
-    width: 40%;
+    width: 35em;
 }
 
-.caratula .marco .izquierda h1 {
+.caratula .marco .texto h1 {
 
-    font-size: 5rem;
+    font-size: 5em;
     font-weight: 400;
-    margin-bottom: var(--space-m);
 }
 
-.caratula .marco .izquierda h1 #cursiva {
+.caratula .marco .texto h1 #cursiva {
 
     font-style: italic;
 }
 
-.caratula .marco .izquierda h1 #negrita {
+.caratula .marco .texto h1 #negrita {
 
     font-weight: 600;
 }
 
-.caratula .marco .derecha {
+.caratula .marco .conocenos {
     
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.caratula .marco .derecha img {
+.caratula .marco .conocenos img {
     
     align-self: center;
     width: 80%;
 }
 
-.caratula .marco .derecha a {
+.caratula .marco .conocenos a {
 
     width: 50%;
     align-self: center;
 }
 
-.caratula .marco .derecha a button {
+.caratula .marco .conocenos a button {
 
     width: 100%;
     padding: 5%;
-    font-size: 3rem;
+    font-size: 3em;
 
     align-items: center;
     appearance: none;
@@ -314,16 +303,16 @@ header ul li a:hover::after, header ul li a:focus::after {
     white-space: nowrap;
 }
 
-.caratula .marco .derecha a button:active,
-.caratula .marco .derecha a button:focus {
+.caratula .marco .conocenos a button:active,
+.caratula .marco .conocenos a button:focus {
     outline: none;
 }
 
-.caratula .marco .derecha a button:hover {
+.caratula .marco .conocenos a button:hover {
     background-position: -20px -20px;
 }
 
-.caratula .marco .derecha a button:focus:not(:active) {
+.caratula .marco .conocenos a button:focus:not(:active) {
     box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
 }
 
@@ -334,13 +323,13 @@ header ul li a:hover::after, header ul li a:focus::after {
     background-image: url(../img/fondo_invertido.svg);
     background-repeat: no-repeat;
     background-position: top;
-
 }
 
 .nosotros__seccion {
 
     width: 100%;
-    padding: calc(var(--space-l)*5) var(--space-l) 0;
+    height: 100vh;
+    padding: calc(var(--space-l)*6) var(--space-l) 0;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -350,19 +339,20 @@ header ul li a:hover::after, header ul li a:focus::after {
     background-image: url(../img/fondo2.svg);
     background-repeat: no-repeat;
     background-position: bottom;
+
 }
 
 .nosotros__seccion .izquierda {
     
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .nosotros__seccion .izquierda img {
 
     justify-self: flex-end;
-    width: 30vw;
+    width: 35vw;
 }
 
 .nosotros__seccion .derecha {
@@ -373,7 +363,7 @@ header ul li a:hover::after, header ul li a:focus::after {
 
 .nosotros__seccion .derecha h2 {
 
-    font-size: 4.5rem;
+    font-size: 4.5em;
     margin-bottom: var(--space-m);
 }
 
@@ -391,13 +381,13 @@ header ul li a:hover::after, header ul li a:focus::after {
     background-position: top;
     background-position-x: right;
     background-size: 50%;
-
 }
 
 .servicios__seccion {
 
     width: 100%;
-    padding: calc(var(--space-l)*8) calc(var(--space-l)*3) 0;
+    height: 100vh;
+    padding: calc(var(--space-l)*6) calc(var(--space-l)*3) 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -410,7 +400,6 @@ header ul li a:hover::after, header ul li a:focus::after {
     background-position-x: left;
     background-size: 50%;
 
-    height: 1000px;
 }
 
 .servicios__seccion .arriba {
@@ -420,13 +409,20 @@ header ul li a:hover::after, header ul li a:focus::after {
 
 .servicios__seccion .arriba h2 {
 
-    font-size: 4.5rem;
-    margin-bottom: var(--space-m);
+    font-size: 4.5em;
+}
+
+.servicios__seccion .arriba h3 {
+
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 1em;
 }
 
 .servicios__seccion .arriba p {
 
-    font-size: 2rem;
+    font-size: 2em;
+    margin-bottom: 1em;
 }
 
 .servicios__seccion .abajo {
@@ -500,5 +496,197 @@ header ul li a:hover::after, header ul li a:focus::after {
     padding-top: 30px;    
 }
 
-/* FOOTER */
+/* MEDIA QUERY */
+
+@media(max-width: 1055px) {
+
+    .caratula .marco .texto {
+
+        width: 100%;
+    }
+
+    .caratula .marco section {
+
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .caratula .marco .conocenos {
+
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .caratula .marco .conocenos img {
+
+        width: 40%;
+    }
+
+    .caratula .marco .conocenos a {
+
+        width: 30%;
+    }
+}
+
+@media(max-width: 990px) {
+
+    #header__desktop {
+        
+        display: none;
+    }
+
+    #header__mobile {
+
+        margin: 0 5px;
+        z-index: 1;
+        position: sticky;
+        top: 30px;
+    
+        font-family: var(--text-secondary);
+        background-color: var(--color-secondary);
+        color: white;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #header__mobile #logo__header {
+    
+        width: 100%;
+        height: auto;
+        padding: .75em;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #header__mobile #logo__header a {
+
+        width: 14em;
+    }
+    
+    #header__mobile ul {
+    
+        width: auto;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+    
+    #header__mobile ul li {
+    
+        flex-basis: 0;
+        font-size: 2em;
+        display: flex;
+        justify-content: center;
+    }
+
+    #header__mobile ul li:last-child {
+
+        margin-bottom: .3em;
+    }
+    
+    #header__mobile ul li a {
+    
+        overflow: hidden;
+        display: block;
+        position: relative;
+        padding: 0.2em 0;
+    }
+      
+    #header__mobile ul li a::after {
+    
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.1em;
+        background-color: var(--color-primary);
+        transition: opacity 300ms, transform 300ms;
+        transform: translate3d(-100%, 0, 0);
+    }
+      
+    #header__mobile ul li a:hover::after, #header__mobile ul li a:focus::after {
+    
+        opacity: 1;
+        transform: translate3d(0, 0.2em, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    #header__mobile #boton__responsive {
+
+        display: inline-block;
+        width: 5em;
+        height: 5em;
+        margin-block: auto;
+        vertical-align: middle;
+        padding: .5em;
+        border-radius: 10px;
+    }
+
+    #header__mobile .sinSeleccionar {
+
+        border: 2px solid rgba(255, 255, 255, 0.55);
+    }
+
+    #header__mobile .seleccionado {
+
+        border: 4px solid rgba(255, 255, 255, 0.55);
+    }
+
+    .mostrar__navegacion {
+
+        animation-name: abrirNavegador;
+        animation-timing-function: linear;        
+        animation-duration: .15s;
+        animation-fill-mode: both;
+    }
+
+    #header__mobile .anular__navegacion {
+
+        display: none;
+    }
+
+    @media(max-width: 800px) {
+
+        html {
+            font-size: 50%;
+        }
+    }
+
+    @media(max-width: 600px) {
+
+        .caratula .marco .logo__caratula {
+
+            margin: auto;
+        }
+
+        .caratula .marco .conocenos {
+
+            flex-direction: column;
+            gap: 8em;
+        }
+
+        .caratula .marco .conocenos img {
+
+            width: 35em;
+        }
+    
+        .caratula .marco .conocenos a {
+    
+            width: 25em;
+        }
+    }
+
+    @media(max-width: 485px) {
+
+        html {
+            font-size: 40%;
+        }
+    }
+}
 
